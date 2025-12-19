@@ -3,15 +3,24 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-noticias = []
+noticias = [
+    {
+      "titulo": "Notícia 1",
+        "conteudo": "Conteúdo da notícia 1"
+    },
+    {
+      "titulo": "Notícia 2",
+        "conteudo": "Conteúdo da notícia 2"
+    },
+    {
+      "titulo": "Notícia 3",
+        "conteudo": "Conteúdo da notícia 3"
+    }
+]
 
-@app.route('/')
-def home():
-    return jsonify({"mensagem": "API de Notícias funcionando!"})
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
+@app.get('/noticias')
+def get_noticias():
+    return {"noticias": noticias}
 
 
 
