@@ -67,6 +67,17 @@ def atualizar_noticia(id):
 
 
 
+@app.route('/noticias/<int:id>', methods=['DELETE'])
+def deletar_noticia(id):
+    for noticia in noticias:
+        if noticia["id"] == id:
+            noticias.remove(noticia)
+            return jsonify({"mensagem": "Notícia removida"})
+
+    return jsonify({"erro": "Notícia não encontrada"}), 404
+
+
+
 
 
 
