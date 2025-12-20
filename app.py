@@ -52,6 +52,21 @@ def add_noticia():
     return jsonify(noticia), 201
 
 
+@app.route('/noticias/<int:id>', methods=['PUT'])
+def atualizar_noticia(id):
+    dados = request.json
+
+    for noticia in noticias:
+        if noticia["id"] == id:
+            noticia["titulo"] = dados.get("titulo", noticia["titulo"])
+            noticia["conteudo"] = dados.get("conteudo", noticia["conteudo"])
+            noticia["autor"] = dados.get("autor", noticia["autor"])
+            return jsonify(noticia)
+
+    return jsonify({"erro": "Notícia não encontrada"}), 404
+
+
+
 
 
 
