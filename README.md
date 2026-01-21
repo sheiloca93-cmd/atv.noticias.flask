@@ -1,25 +1,30 @@
 
 # 📰 API de Notícias com Flask
 
-## 📌 Descrição
-Este projeto consiste no desenvolvimento de uma **API RESTful** utilizando **Flask**, com o objetivo de aplicar conceitos fundamentais de desenvolvimento de APIs, como:
+API RESTful desenvolvida em Flask para gerenciamento de notícias, permitindo criar, listar, atualizar e remover notícias.
 
-- Criação de rotas
-- Manipulação de dados em memória (listas e dicionários)
-- Uso dos métodos HTTP: GET, POST, PUT e DELETE
-- Versionamento de código com Git
-
-A API permite o gerenciamento de notícias, possibilitando criar, listar, atualizar e remover registros.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-- Python 3.x
+## 🚀 Tecnologias Utilizadas
+- Python 3
 - Flask
-- Git
-- VS Code
+- Flask-Smorest
+- Marshmallow
 
----
+## 📁 Estrutura do Projeto
 
-## 📂 Estrutura do Projeto
+
+
+## 🔗 Endpoints
+
+### 🔹 Listar notícias
+**GET** `/noticias`
+
+### 🔹 Criar notícia
+**POST** `/noticias`
+```json
+{
+  "titulo": "Título da notícia",
+  "conteudo": "Conteúdo da notícia"
+}
+```
+
 
